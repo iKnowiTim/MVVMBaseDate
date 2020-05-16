@@ -1,0 +1,35 @@
+﻿<Window x:Class="BaseDateMVVM.MainWindow"
+        x:Name="ProgrammWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BaseDateMVVM"
+        xmlns:UC="clr-namespace:BaseDateMVVM.MyUserComponent"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="600" Width="1000" AllowsTransparency="True" WindowStyle="None">
+    <Grid>
+        <StackPanel>
+            <Grid Height="30"
+                  Background="#062170">
+                <Button HorizontalAlignment="Right"
+                        Width="30" Margin="3"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Content="X"
+                        Command="{Binding CloseWindowCommand}"
+                        FontWeight="ExtraBold"
+                        FontSize="15"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <UC:UserControlLoginWindow/>
+                <UC:UserControlRegistrationWindow Grid.Column="1"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -24,7 +24,6 @@ namespace BaseDateMVVM.MyUserComponent
         public UserControlLoginWindow()
         {
             InitializeComponent();
-            DataContext = new UserControlLoginWindowViewModel();
         }
     }
 }

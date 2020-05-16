@@ -14,13 +14,30 @@ namespace BaseDateMVVM.ViewModel
             InitCommand();
         }
 
-        public Action CloseAction { get; set; }
+        private bool _registrationComponentVisibility;
+        public bool RegistrationComponentVisibility
+        {
+            get
+            {
+                return _registrationComponentVisibility;
+            }
+            set
+            {
+                _registrationComponentVisibility = value;
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(RegistrationComponentVisibility)));
+            }
+        }
 
         private void InitCommand()
         {
-            CloseWindowCommand = new RelayCommand(CloseAction);
+            CloseWindowCommand = new RelayCommand(CloseWindow);
         }
 
         public ICommand CloseWindowCommand { get; set; }
+
+        public void CloseWindow()
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

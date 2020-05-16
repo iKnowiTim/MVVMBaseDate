@@ -24,7 +24,12 @@ namespace BaseDateMVVM.MyUserComponent
         public UserControlRegistrationWindow()
         {
             InitializeComponent();
-            DataContext = new UserControlRegWindowViewModel();
+        }
+
+        private void TextBoxName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            tb.GetBindingExpression(TextBox.TextProperty).UpdateSource();
         }
     }
 }

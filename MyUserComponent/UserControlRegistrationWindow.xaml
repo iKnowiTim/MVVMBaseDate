@@ -3,9 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:BaseDateMVVM.ViewModel"
              xmlns:local="clr-namespace:BaseDateMVVM.MyUserComponent"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.DataContext>
+        <vm:UserControlRegWindowViewModel/>
+    </UserControl.DataContext>
     <Grid Background="#133AAC" x:Name="RegisterGridFromUC">
         <StackPanel>
             <TextBlock HorizontalAlignment="Center"
@@ -54,11 +59,14 @@
                                      HorizontalContentAlignment="Center"
                                      VerticalContentAlignment="Center"
                                      FontSize="20"
-                             Text="{Binding Path=UserName}"
+                             TextChanged="TextBoxName_TextChanged"
+                             Text="{Binding Mode=TwoWay, UpdateSourceTrigger=Explicit, Path=UserName}"
+                             
                                      FontWeight="Bold"
                                      Foreground="#133AAC"/>
                     <TextBox Margin="10 10 10 15"
-                             Text="{Binding Path=UserLastName}"
+                             TextChanged="TextBoxName_TextChanged"
+                             Text="{Binding Mode=TwoWay, UpdateSourceTrigger=Explicit, Path=UserLastName}"
                                      Name="TextBoxLastName"
                                      Height="35" 
                                      Width="250" 
@@ -68,7 +76,8 @@
                                      FontWeight="Bold"
                                      Foreground="#133AAC"/>
                     <TextBox Margin="10 10 10 15"
-                             Text="{Binding Path=UserAge}"
+                             TextChanged="TextBoxName_TextChanged"
+                             Text="{Binding Mode=TwoWay, UpdateSourceTrigger=Explicit, Path=UserAge}"
                                      Name="TextBoxAge"
                                      Height="35" 
                                      Width="250" 
@@ -78,7 +87,8 @@
                                      FontWeight="Bold"
                                      Foreground="#133AAC"/>
                     <TextBox Margin="10 10 10 15"
-                             Text="{Binding Path=UserLogin}"
+                             TextChanged="TextBoxName_TextChanged"
+                             Text="{Binding Mode=TwoWay, UpdateSourceTrigger=Explicit, Path=UserLogin}"
                                      Name="TextBoxRegistrationLogin"
                                      Height="35" 
                                      Width="250" 
@@ -88,7 +98,8 @@
                                      FontWeight="Bold"
                                      Foreground="#133AAC"/>
                     <TextBox Margin="10 10 10 15"
-                             Text="{Binding Path=UserPassword}"
+                             TextChanged="TextBoxName_TextChanged"
+                             Text="{Binding Mode=TwoWay, UpdateSourceTrigger=Explicit, Path=UserPassword}"
                                      Name="TextBoxRegistrationPassword"
                                      Height="35" 
                                      Width="250" 

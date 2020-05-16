@@ -16,10 +16,12 @@ namespace BaseDateMVVM.ViewModel
         [System.Obsolete]
         private void InitCommand()
         {
+            ShowRegistrationCommand = new RelayCommand(ShowRegistration);
             LoginUserCommand = new RelayCommand(LoginUser);
         }
 
         public ICommand LoginUserCommand { get; set; }
+        public ICommand ShowRegistrationCommand { get; set; }
 
         private string _userLogin = "";
         public string UserLogin
@@ -33,6 +35,13 @@ namespace BaseDateMVVM.ViewModel
         {
             get { return _userPassword; }
             set { _userPassword = value; }
+        }
+
+        
+
+        public void ShowRegistration()
+        {
+            
         }
 
         [System.Obsolete]

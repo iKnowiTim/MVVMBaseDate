@@ -24,10 +24,11 @@ namespace BaseDateMVVM
         public MainWindow()
         {
             InitializeComponent();
-            MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
-            DataContext = mainWindowViewModel;
-            if (mainWindowViewModel.CloseAction != null)
-                mainWindowViewModel.CloseAction = new Action(Close);
+        }
+
+        private void ProgrammWindow_Closed(object sender, EventArgs e)
+        {
+            
         }
     }
 }
